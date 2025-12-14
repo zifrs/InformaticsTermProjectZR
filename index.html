@@ -13,11 +13,14 @@
     text-indent: -2em;
     margin-bottom: 1em;
   }
-    span.center-italic {
+    span.italic {
     display: block;        /* allows centering inside a paragraph */
     text-align: center;
     font-style: italic;
   }
+    p.center{
+      text-align: center;
+    }
 </style>
 </head>
 <body>
@@ -58,7 +61,7 @@
    <p class="indent"> 
      Next, the changes in housing units between 2010 and 2023, both in raw values and in percentages, are calculated, NA values were removed, and a static flow map was made to show shifts. Like the timestamped map, a log base-2 scale was used to make a more visually appealing map (Figures 2 and 3). 
    </p>
-  <p>
+  <p class="center">
     Subsequently, the number of units in 2010 and 2023, the raw number change in number of units, and the percent change calculated for the city overall (all available tracts). <br>
 Below are the results: <br>
 Total Units 2010: 2,884,276 <br>
@@ -80,7 +83,7 @@ Percent Change in New York city's housing stock (2010–2023): 6.89% <br>
     <p class="indent">
       Similarly, the change in missing units between 2010 and 2023, and the rate of change for the missing units between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units and vacancies, except that for certain % change if the value is 0/0,  the value is not present, as it is literally indeterminate (Figures 8-9).
   </p>
-   <p>
+   <p class="center">
      The missing units stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
 Missing Units 2010: 143,437  <br>
 Missing Units 2023: 165,171  <br>
@@ -99,7 +102,7 @@ Percent Change 2010-2023: 15.15%  <br>
      <p class="indent">
        Similarly, the change in Weighted Property Value/Unit/ Census Tract between 2010 and 2023, and the rate of change for the Weighted Property Value/ Census Tract between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units, vacancies, and missing units. 
   </p>
-     <p>
+     <p class="center">
        The weighted property value stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
 NYC Median Property Value 2010: $450950.78 <br>
 NYC Median Property Value 2023: $763,066.57 <br>
@@ -119,10 +122,10 @@ Percent Change 2010-2023 69.12% <br>
       However, there might be relationships worth exploring in the future, as a lack of vacancy in certain neighborhoods may indicate rising property values/gentrification. While Airbnbs or developers putting units online might not cause the crisis, low vacancy might.
   </p>
   <h2> Data Sources </h2>
-  <p>
+  <p class="center">
     NYC Open Data (For Shorelines) <br>
 IPUMS (For Crosswalks) <br>
-<span class="center-italic"> ACS Data <br> </span>
+<span class="italic"> ACS Data <br> </span>
 B25002 - Occupation Status <br>
 B25003 - Tenure (Rental vs. Homeowner) <br>
 B25004 - Vacancy Status - (type of vacancy) <br>
