@@ -4,9 +4,19 @@
   <style>
   h1, h2 {
     text-align: center;
-    .indent {
+  }
+    p.indent {
     text-indent: 2em; 
   }
+      p.hanging {
+    padding-left: 2em;
+    text-indent: -2em;
+    margin-bottom: 1em;
+  }
+    span.center-italic {
+    display: block;        /* allows centering inside a paragraph */
+    text-align: center;
+    font-style: italic;
   }
 </style>
 </head>
@@ -48,7 +58,104 @@
    <p class="indent"> 
      Next, the changes in housing units between 2010 and 2023, both in raw values and in percentages, are calculated, NA values were removed, and a static flow map was made to show shifts. Like the timestamped map, a log base-2 scale was used to make a more visually appealing map (Figures 2 and 3). 
    </p>
-  <p class="indent">
+  <p>
+    Subsequently, the number of units in 2010 and 2023, the raw number change in number of units, and the percent change calculated for the city overall (all available tracts). <br>
+Below are the results: <br>
+Total Units 2010: 2,884,276 <br>
+Total Units 2023: 3,083,075 <br>
+Change in New York city's housing stock (2010–2023): 198,799 <br>
+Percent Change in New York city's housing stock (2010–2023): 6.89% <br>
   </p>
+  A time-stamped vacancy rate/ Census Tract is then presented on Folium using a similar methodology to that of the “Total_Housing Units” paragraph above but with the “Vacancy Rate” column instead (Figure 4).
+    <p class="indent">
+      Similarly, the change in percentage (first derivative of vacancy rate) between 2010 and 2023, and the rate of change for the change in percentage of vacancy rate (second derivative of vacancy rate) between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units (Figures 5-6).
+  </p>
+  NYC's total vacancy rate changed from 8.94% in 2010 to 9.67% in 2023, a 0.73 percentage-point increase (8.14% relative change), which shows an insignificant change in vacancy.
+    <p class="indent">
+      Next, the missing units were calculated. Missing units are units that are not occupied at the current vacancy rate (which is 8-9 for the city overall), which would have been occupied had the vacancy rate hit a target rate. In this case, it is the normal 5% rate. These are the units that developers take offline for a while, or Airbnb left fallow. 
+  </p>
+    <p class="indent">
+      The missing units/ Census Tract timestamped were mapped in a similar manner to both vacancy %/ Census Tract and housing units/ Census Tract, showing shifts in missing units between 2010 and 2023 (Figure 7).
+  </p>
+    <p class="indent">
+      Similarly, the change in missing units between 2010 and 2023, and the rate of change for the missing units between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units and vacancies, except that for certain % change if the value is 0/0,  the value is not present, as it is literally indeterminate (Figures 8-9).
+  </p>
+   <p>
+     The missing units stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
+Missing Units 2010: 143,437  <br>
+Missing Units 2023: 165,171  <br>
+Total Gain 2010-2023: 21,734  <br>
+Percent Change 2010-2023: 15.15%  <br>
+  </p> 
+   <p class="indent">
+     Given the 2010 vacancy rate of 8.94% and the 2023 vacancy rate of 9.67%. Compared with the growth of housing (6.89%), and vacancy growth (8.14% relative change between 8.94 and 9.67%), a 15.15% change is much, much faster. Moreover, the value of growth seems to be the roughly the sum between the growth of housing in % and the relative change in vacancy % (15.03% vs 15.15%).
+  </p>
+     <p class="indent">
+       Last but not least comes weighted property values which were calculated by  first finding/ Census Tract the number of units owned or rented/ Census Tract, which were in “Owner_Occupied_Units” and “Renter_Occupied_Units. For owned units this value is then multiplied by median property value and called “owned_value”. Then for rented units this value is multiplied by median rent and 360 to mimic each rent payment as a monthly payment  30 year mortgage (which is 360 months), being called “rental_unit_value”. Then the weighted property value is calculated as Owner_Proportion by “owned_value,” and rental_proportion by rental_unit_value.
+  </p>
+     <p class="indent">
+       The Weighted Property Value/ Census Tract timestamps were mapped in a similar manner to both Missing Units/ Census Tract vacancy% %/ Census Tract and housing units/ Census Tract, showing shifts in property values units between 2010 and 2023 (Figure 10).
+  </p>
+     <p class="indent">
+       Similarly, the change in Weighted Property Value/Unit/ Census Tract between 2010 and 2023, and the rate of change for the Weighted Property Value/ Census Tract between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units, vacancies, and missing units. 
+  </p>
+     <p>
+       The weighted property value stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
+NYC Median Property Value 2010: $450950.78 <br>
+NYC Median Property Value 2023: $763,066.57 <br>
+Median Property Value Gain between 2010-2023 $312,115.78 <br>
+Percent Change 2010-2023 69.12% <br>
+
+  </p>
+  <p class="indent">
+    For the city, the median property value growth of 69.12% outdoes every other metric, and it is not even close. Relative to the 15.15% percent change in missing units, 6.89% growth in housing, and 8.14% relative change in vacancy, the sheer percentage is outside of this world.
+
+  </p>
+  <p class="indent">
+    Finally, to calculate the correlation between the percentage change  in missing units between 2010 and 2023 (independent variable), and the percentage change in property between 2010 and 2023/ Census Tract (Figures 9,12), a scatterplot was established, with a normalization using the ln (x) or natural log of (x) to straighten out the chart. The chart is below (Figure 13). As you can see, there is no correlation, with the pearson coefficient of 0.017 showing as such. Therefore, there is no logarithmic correlation between the change in vacant homes that are fillable and the change in home prices.
+  </p>
+   In other words, at least in NYC, filling in the vacant units we already have would do little to influence housing prices. 
+    <p class="indent">
+      However, there might be relationships worth exploring in the future, as a lack of vacancy in certain neighborhoods may indicate rising property values/gentrification. While Airbnbs or developers putting units online might not cause the crisis, low vacancy might.
+  </p>
+  <h2> Data Sources </h2>
+  <p>
+    NYC Open Data (For Shorelines) <br>
+IPUMS (For Crosswalks) <br>
+<span class="center-italic"> ACS Data <br> </span>
+B25002 - Occupation Status <br>
+B25003 - Tenure (Rental vs. Homeowner) <br>
+B25004 - Vacancy Status - (type of vacancy) <br>
+B25064 - Median Rents <br>
+B25077 Property Values <br>
+  </p>
+  <h2> References </h2>
+     <p class="hanging"> Caporal, J (2025, October 17). The median monthly mortgage payment in 2025 by state, city, and more. The Fool. https://www.fool.com/money/research/median-mortgage-payment/ The Motley Fool+1 
+     </p>
+<p class="hanging"> Census Reporter. (2023). New York, NY (city) (Profile ID: 16000US3651000). https://censusreporter.org/profiles/16000US3651000-new-york-ny/ </p>
+<p class="hanging">Henry George School of Social Science. (2022, December 15). Housing in New York City – What it takes to tackle the affordability crisis Retrieved October 19, 2025, from https://www.hgsss.org/event/housing-in-new-york-city-what-it-takes-to-tackle-the-affordability-crisis/ 
+</p>
+<p class="hanging">IPUMS USA. (2025). U.S. census data for social, economic, and health research. University of Minnesota, IPUMS. Retrieved October 19, 2025, from https://usa.ipums.org/usa/ IPUMS USA
+</p>
+<p class="hanging">Jonathan Schroeder, David Van Riper, Steven Manson, Katherine Knowles, Tracy Kugler, Finn Roberts, and Steven Ruggles. IPUMS National Historical Geographic Information System: Version 20.0 [dataset]. Minneapolis, MN: IPUMS. 2025. http://doi.org/10.18128/D050.V20.0 
+</p>                                                                                                                                                                                                                                                      
+<p class="hanging"> New York City Department of City Planning. (2025, September). MapPLUTO / PLUTO Change. City of New York. Retrieved October 19, 2025, from https://www.nyc.gov/content/planning/pages/resources/datasets/mappluto-pluto-change New York City Government+1 
+</p>
+<p class="hanging"> New York City Department of Finance. (2025). Property assessments. City of New York. Retrieved October 19, 2025, from https://www.nyc.gov/site/finance/property/property-assessments.page New York City Government 
+</p>
+<p class="hanging"> NYC Open Data(2025, October 15). NYC Citywide Rolling Calendar Sales [Dataset]. City of New York.. Retrieved October 19, 2025, from https://data.cityofnewyork.us/dataset/NYC-Citywide-Rolling-Calendar-Sales/usep-8jbt/about_data NYC Open Data
+</p>
+<p class="hanging"> Once, L. (2025, October 17). New York City rents climbed 5.4 %, pushing affordability beyond city limits. Mortgage & Real Estate Industry News. Retrieved October 19, 2025 fromhttps://www.mpamag.com/us/mortgage-industry/market-updates/new-york-city-rents-climbed-54-pushing-affordability-beyond-city-limits/553443 MPA Magazine
+</p>
+<p class="hanging"> The Intercept. (2022, February 9). Two Fires Tell the Tale of the U.S. Housing Crisis [Podcast episode]. https://theintercept.com/2022/02/09/intercepted-bronx-philadelphia-fire-housing-crisis/ 
+</p>
+<p class="hanging"> U.S. Census Bureau. (2024, September 12). Nearly half of renter households are cost-burdened, proportions differ by race. Retrieved October 19, 2025 fromhttps://www.census.gov/newsroom/press-releases/2024/renter-households-cost-burdened-race.html Census.gov+2Census.gov+2 
+</p>
+<p class="hanging">  U.S. Census Bureau. (2025). American Community Survey 5-Year Estimates Detailed Tables for Bronx County (36005), Kings County (36047), New York County (36061), Queens County (36081), and Richmond County (36085), New York. data.census.gov. https://data.census.gov/table?g=050XX00US36005$1400000,36047$1400000,36061$1400000,36081$1400000,36085$1400000&y=2023&d=ACS+5-Year+Estimates+Detailed+Tables)
+</p>
+<p class="hanging">Williams, C. C. (2023, April 6). What CDFIs are doing about the housing crisis. Next City. https://nextcity.org/urbanist-news/what-cdfis-are-doing-about-the-housing-crisis 
+</p>
+<p class="hanging"> Zarroli, J. (2016, March 9). ISO 2 affordable bedrooms in NYC? Good luck with that. National Public Radio. https://www.npr.org/2016/03/09/469631131/iso-2-affordable-bedrooms-in-nyc-good-luck-with-that
+</p>
 </body>
 </html>
