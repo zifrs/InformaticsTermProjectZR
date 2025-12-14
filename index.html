@@ -1,7 +1,54 @@
 <!DOCTYPE html>
-<title> Untangling a Part of New York City’s Housing Crisis </title>
-<h1> Context </h1>
-<p> Raise your hand if you want to own your own home? Raise your hand if that quest is unreachable? We are in a housing crisis. The median rent in New York city is $3,600/month or 43,200/year (Once, 2025). Meanwhile, the median mortgage payment per the Motley Fool is not much better at $3,260/month, or $39,120/year (Caporal, 2025). To be rent burdened, per the census, per the census is to spend more than 30% of income on housing (US Census Bureau, 2024). For the median renter, that would be $144,000/year, and for the owner, that would be $130,400/year . Meanwhile, per the census reporter, the median household income is about $76,500/year, way less than the rental burden threshold for either rental and household burden. That means tht if you were the median New Yorker you would have to spend more than 50% of your pre-tax income on housing (Census Reporter, 2023). </p>
-<h1> Motivation </h1>
-<p> One of the proposed explanations of the affordability crisis in NYC might be that certain areas in the city have vacant homes that can otherwise be filled - e.g., Airbnbs or other types. My project scoped out this relationship, or lack thereof, between these vacancies and property values I seek to go back to see what trends occur over the past 14 years (2010-2023), and what correlations, if any are there between vacancy and affordability.</p>
+<head>
+  <title> Untangling a Part of New York City’s Housing Crisis </title>
+  <style>
+  h1, h2 {
+    text-align: center;
+    .indent {
+    text-indent: 2em; 
+  }
+  }
+</style>
+</head>
+<body>
+<h1> Untangling a Part of New York City’s Housing Crisis </h1>
+<h2> Context </h2>
+<p class= "indent"> Raise your hand if you want to own your own home? Raise your hand if that quest is unreachable? We are in a housing crisis. The median rent in New York city is $3,600/month or 43,200/year (Once, 2025). Meanwhile, the median mortgage payment per the Motley Fool is not much better at $3,260/month, or $39,120/year (Caporal, 2025). To be rent burdened, per the census, per the census is to spend more than 30% of income on housing (US Census Bureau, 2024). For the median renter, that would be $144,000/year, and for the owner, that would be $130,400/year . Meanwhile, per the census reporter, the median household income is about $76,500/year, way less than the rental burden threshold for either rental and household burden. That means tht if you were the median New Yorker you would have to spend more than 50% of your pre-tax income on housing (Census Reporter, 2023).
+</p>
+<h2> Motivation </h2>
+<p class="indent"> One of the proposed explanations of the affordability crisis in NYC might be that certain areas in the city have vacant homes that can otherwise be filled - e.g., Airbnbs or other types. My project scoped out this relationship, or lack thereof, between these vacancies and property values I seek to go back to see what trends occur over the past 14 years (2010-2023), and what correlations, if any are there between vacancy and affordability.
+</p>
+<h2> Methodology </h2>
+  <p class="indent">  The aim of this final project is to use Python, show the correlation (or lack thereof) between property values and vacancy in New York City, between 2010 and 2023.
+</p>
+ <p class="indent"> 
+   To do so, first, census data was acquired using the API, where from the American Community Survey (ACS), I got five-year counts from 2010 to 2023 ACSs for census tracts, as those were the only years available and that it would give enough of a timeline - 14 years to show significance (or lack thereof). In the tables of B25002 (Occupancy Status) - with the counts for, Total Housing Units, Occupied Housing Units, and Vacant Housing Units were found. For B25003, Tenure was found with the counts for “Total Occupied Units,” “Owner Occupied Units,” and “Rental Occupied Units.” Finally, for B25064 (Median Gross Rent), and B25077 (Median Home Value), were acquired. 
+   </p>
+  <p class="indent"> 
+    Next, to avoid further errors, the plus signs for values in B25064, and B25077 were stripped, and any non-numeric values in those became numeric. 
+   </p>
+  <p class="indent"> 
+    However, the 2010s data and 2020s data had different census tracts. Thus, I split the 2010s data, and the 2020s data into two datasets, and since the majority of my data was in 2010 tracts, I used 2010 tracts as reference. 
+   </p>
+  <p class="indent"> 
+    To convert the 2020 tracts to 2010 tracts, I used the IPUMS 2020 to 2010 crosswalk data, while keeping the 2010 tracts. For the 2020 data, IPUMS algorithms would convert the census metrics back into 2010 data. While not reliable, it would get the job done and preserve most of the data. 
+   </p>
+  <p class="indent"> 
+    Subsequently, “Vacancy Rate” was calculated by dividing the variables “Vacant Housing Units” by Total Housing Units, while owner and renter proportion was found by dividing “Owner_Occupied_Units”/”Total Housing Units”, and owner proportion was fund by doing similar but instead of using owner units, it used “Renter_Occupied_Units.”
+   </p>
+  <p class="indent"> 
+    To prevent merging errors, the merged data, now all in 2010s tract, was standardized, and the 2010 tracts, which came from the NYC Department of City Planning, were merged into the dataset. Coordinate reference systems were checked and verified to be state plane. 
+   </p>
+   <p class="indent"> 
+     To prevent merging errors, the merged data, now all in 2010s tract, was standardized, and the 2010 tracts, which came from the NYC Department of City Planning, were merged into the dataset. Coordinate reference systems were checked and verified to be state plane. 
+   </p>  
+   <p class="indent"> 
+     First, the amount of housing units/ Census Tract was measured, which was measured using ACS “Total_Housing_Units”. NA values were clipped, and a timestamped map was made to show visual shifts in the timeframe. Note that the scale was transformed from a normal scale to a logarithmic scale (of base 2) to better show diversity in housing units per tract. (Figure 1). 
+   </p>
+   <p class="indent"> 
+     Next, the changes in housing units between 2010 and 2023, both in raw values and in percentages, are calculated, NA values were removed, and a static flow map was made to show shifts. Like the timestamped map, a log base-2 scale was used to make a more visually appealing map (Figures 2 and 3). 
+   </p>
+  <p class="indent">
+  </p>
+</body>
 </html>
