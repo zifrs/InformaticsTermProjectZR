@@ -27,7 +27,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;  
-  text-align: center;    
+  text-align: center;
+  font-weight: bold;
+}
+    body {
+  background-color: #e0f2ff;
+  color: black;
 }
 </style>
 </head>
@@ -71,19 +76,19 @@
    </p>
   
     <figure>
-      <iframe src="TimestampedChangeinUnits20102023.html" title=:  "Timestamped Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
+      <iframe src="TimestampedChangeinUnits20102023.html" title=  "Figure 1: Timestamped Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
       </iframe>
       <figcaption> Figure 1: Timestamped Change in Units/ Census Tract between 2010 and 2023
 </figcaption>
     </figure>
       <figure>
-      <iframe src="ChangeinUnits20102023.html" title=: "Numerical Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
+      <iframe src="ChangeinUnits20102023.html" title= "Figure 2: Numerical Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
       </iframe>
       <figcaption> Figure 2: Numerical Change in Units/ Census Tract between 2010 and 2023
 </figcaption>
     </figure>
    <figure>
-      <iframe src=ChangeinUnitsPCT20102023.html" title=: "Percent Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
+      <iframe src="ChangeinUnitsPCT20102023.html" title= "Figure 3: Percent Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
       </iframe>
       <figcaption> Figure 3: Percent Change in Units/ Census Tract between 2010 and 2023
 </figcaption>
@@ -100,7 +105,26 @@ Percent Change in New York city's housing stock (2010–2023): 6.89% <br>
     <p class="indent">
       Similarly, the change in percentage (first derivative of vacancy rate) between 2010 and 2023, and the rate of change for the change in percentage of vacancy rate (second derivative of vacancy rate) between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units (Figures 5-6).
   </p>
-  NYC's total vacancy rate changed from 8.94% in 2010 to 9.67% in 2023, a 0.73 percentage-point increase (8.14% relative change), which shows an insignificant change in vacancy.
+  <figure>
+      <iframe src="TimestampedChangeinVacancyPct20102023.html" title= "Figure 4: Timestamped Change in Vacancy rate/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 4: Timestamped Change in Vacancy rate/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
+  <figure>
+      <iframe src="VacancyChange20102023.html" title= "Figure 5: Percentage Point Change in in vacancy rate/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 5: Percentage Point Change in vacancy rate/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
+    <figure>
+      <iframe src="VacancyChangePCT201020232ndDerivative.html" title= "Figure 6:  Percent Change in Vacancy Rate/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 6: Percent Change in Vacancy Rate/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
+  <p> NYC's total vacancy rate changed from 8.94% in 2010 to 9.67% in 2023, a 0.73 percentage-point increase (8.14% relative change), which shows an insignificant change in vacancy.
+    </p>
     <p class="indent">
       Next, the missing units were calculated. Missing units are units that are not occupied at the current vacancy rate (which is 8-9 for the city overall), which would have been occupied had the vacancy rate hit a target rate. In this case, it is the normal 5% rate. These are the units that developers take offline for a while, or Airbnb left fallow. 
   </p>
@@ -110,6 +134,24 @@ Percent Change in New York city's housing stock (2010–2023): 6.89% <br>
     <p class="indent">
       Similarly, the change in missing units between 2010 and 2023, and the rate of change for the missing units between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units and vacancies, except that for certain % change if the value is 0/0,  the value is not present, as it is literally indeterminate (Figures 8-9).
   </p>
+     <figure>
+      <iframe src="MissingChangeTimeline20102023.html" title= "Figure 7: Timestamped Change in Missing Units/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 7: Timestamped Change in Missing Units/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
+      <figure>
+      <iframe src="MissingChange20102023.html" title= "Figure 8: Numerical Change in Missing Units/ Census Tract between 2010 and 2023 width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 8: Numerical Change in Missing Units/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
+      <figure>
+      <iframe src="MissingChange20102023Pct.html" title= "Figure 9: Percent Change in Missing Units/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 9: Percent Change in Missing Units/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
    <p class="center">
      The missing units stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
 Missing Units 2010: 143,437  <br>
@@ -129,6 +171,24 @@ Percent Change 2010-2023: 15.15%  <br>
      <p class="indent">
        Similarly, the change in Weighted Property Value/Unit/ Census Tract between 2010 and 2023, and the rate of change for the Weighted Property Value/ Census Tract between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units, vacancies, and missing units. 
   </p>
+  <figure>
+      <iframe src="PropValTimelineChange20102023.html" title= "Figure 10: Timestamped Change in Weighted Property Values/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 10: Timestamped Change in Weighted Property Values/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
+    <figure>
+      <iframe src="PropValChange20102023.html" title= "Figure 11: Numerical Change in Weighted Property Values/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 11: Numerical Change in Weighted Property Values/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
+    <figure>
+      <iframe src="PropValChangePct20102023.html" title= "Figure 12: Percent Change in Weighted Property Values/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 12: Percent Change in Weighted Property Values/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
      <p class="center">
        The weighted property value stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
 NYC Median Property Value 2010: $450950.78 <br>
@@ -148,6 +208,12 @@ Percent Change 2010-2023 69.12% <br>
     <p class="indent">
       However, there might be relationships worth exploring in the future, as a lack of vacancy in certain neighborhoods may indicate rising property values/gentrification. While Airbnbs or developers putting units online might not cause the crisis, low vacancy might.
   </p>
+      <figure>
+      <iframe src="CorrelationFigure13.png" title= " Correlation between percentage change in missing units between 2010 and 2023 (independent variable), and the percentage change in property between 2010 and 2023/tract " width="100%" height="600">
+      </iframe>
+      <figcaption>  Correlation between percentage change  in missing units between 2010 and 2023 (independent variable), and the percentage change in property between 2010 and 2023/tract. Of note, with the pearson correlation coefficient being 0.017, there  there is no logarithmic correlation between the change in vacant homes that are fillable and the change in home prices
+</figcaption>
+    </figure>
   <h2> Data Sources </h2>
   <p class="center">
     NYC Open Data (For Shorelines) <br>
