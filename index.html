@@ -74,7 +74,14 @@
    <p class="indent"> 
      Next, the changes in housing units between 2010 and 2023, both in raw values and in percentages, are calculated, NA values were removed, and a static flow map was made to show shifts. Like the timestamped map, a log base-2 scale was used to make a more visually appealing map (Figures 2 and 3). 
    </p>
-  
+    <p class="center">
+    Subsequently, the number of units in 2010 and 2023, the raw number change in number of units, and the percent change calculated for the city overall (all available tracts). <br>
+Below are the results: <br>
+Total Units 2010: 2,884,276 <br>
+Total Units 2023: 3,083,075 <br>
+Change in New York city's housing stock (2010–2023): 198,799 <br>
+Percent Change in New York city's housing stock (2010–2023): 6.89% <br>
+  </p>
     <figure>
       <iframe src="TimestampedChangeinUnits20102023.html" title=  "Figure 1: Timestamped Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
       </iframe>
@@ -93,18 +100,12 @@
       <figcaption> Figure 3: Percent Change in Units/ Census Tract between 2010 and 2023
 </figcaption>
     </figure>
-  <p class="center">
-    Subsequently, the number of units in 2010 and 2023, the raw number change in number of units, and the percent change calculated for the city overall (all available tracts). <br>
-Below are the results: <br>
-Total Units 2010: 2,884,276 <br>
-Total Units 2023: 3,083,075 <br>
-Change in New York city's housing stock (2010–2023): 198,799 <br>
-Percent Change in New York city's housing stock (2010–2023): 6.89% <br>
-  </p>
   A time-stamped vacancy rate/ Census Tract is then presented on Folium using a similar methodology to that of the “Total_Housing Units” paragraph above but with the “Vacancy Rate” column instead (Figure 4).
     <p class="indent">
       Similarly, the change in percentage (first derivative of vacancy rate) between 2010 and 2023, and the rate of change for the change in percentage of vacancy rate (second derivative of vacancy rate) between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units (Figures 5-6).
   </p>
+  <p> NYC's total vacancy rate changed from 8.94% in 2010 to 9.67% in 2023, a 0.73 percentage-point increase (8.14% relative change), which shows an insignificant change in vacancy.
+    </p>
   <figure>
       <iframe src="TimestampedChangeinVacancyPct20102023.html" title= "Figure 4: Timestamped Change in Vacancy rate/ Census Tract between 2010 and 2023" width="100%" height="600">
       </iframe>
@@ -123,8 +124,6 @@ Percent Change in New York city's housing stock (2010–2023): 6.89% <br>
       <figcaption> Figure 6: Percent Change in Vacancy Rate/ Census Tract between 2010 and 2023
 </figcaption>
     </figure>
-  <p> NYC's total vacancy rate changed from 8.94% in 2010 to 9.67% in 2023, a 0.73 percentage-point increase (8.14% relative change), which shows an insignificant change in vacancy.
-    </p>
     <p class="indent">
       Next, the missing units were calculated. Missing units are units that are not occupied at the current vacancy rate (which is 8-9 for the city overall), which would have been occupied had the vacancy rate hit a target rate. In this case, it is the normal 5% rate. These are the units that developers take offline for a while, or Airbnb left fallow. 
   </p>
@@ -133,6 +132,16 @@ Percent Change in New York city's housing stock (2010–2023): 6.89% <br>
   </p>
     <p class="indent">
       Similarly, the change in missing units between 2010 and 2023, and the rate of change for the missing units between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units and vacancies, except that for certain % change if the value is 0/0,  the value is not present, as it is literally indeterminate (Figures 8-9).
+  </p>
+  <p class="center">
+     The missing units stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
+Missing Units 2010: 143,437  <br>
+Missing Units 2023: 165,171  <br>
+Total Gain 2010-2023: 21,734  <br>
+Percent Change 2010-2023: 15.15%  <br>
+  </p> 
+   <p class="indent">
+     Given the 2010 vacancy rate of 8.94% and the 2023 vacancy rate of 9.67%. Compared with the growth of housing (6.89%), and vacancy growth (8.14% relative change between 8.94 and 9.67%), a 15.15% change is much, much faster. Moreover, the value of growth seems to be the roughly the sum between the growth of housing in % and the relative change in vacancy % (15.03% vs 15.15%).
   </p>
      <figure>
       <iframe src="MissingChangeTimeline20102023.html" title= "Figure 7: Timestamped Change in Missing Units/ Census Tract between 2010 and 2023" width="100%" height="600">
@@ -152,16 +161,6 @@ Percent Change in New York city's housing stock (2010–2023): 6.89% <br>
       <figcaption> Figure 9: Percent Change in Missing Units/ Census Tract between 2010 and 2023
 </figcaption>
     </figure>
-   <p class="center">
-     The missing units stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
-Missing Units 2010: 143,437  <br>
-Missing Units 2023: 165,171  <br>
-Total Gain 2010-2023: 21,734  <br>
-Percent Change 2010-2023: 15.15%  <br>
-  </p> 
-   <p class="indent">
-     Given the 2010 vacancy rate of 8.94% and the 2023 vacancy rate of 9.67%. Compared with the growth of housing (6.89%), and vacancy growth (8.14% relative change between 8.94 and 9.67%), a 15.15% change is much, much faster. Moreover, the value of growth seems to be the roughly the sum between the growth of housing in % and the relative change in vacancy % (15.03% vs 15.15%).
-  </p>
      <p class="indent">
        Last but not least comes weighted property values which were calculated by  first finding/ Census Tract the number of units owned or rented/ Census Tract, which were in “Owner_Occupied_Units” and “Renter_Occupied_Units. For owned units this value is then multiplied by median property value and called “owned_value”. Then for rented units this value is multiplied by median rent and 360 to mimic each rent payment as a monthly payment  30 year mortgage (which is 360 months), being called “rental_unit_value”. Then the weighted property value is calculated as Owner_Proportion by “owned_value,” and rental_proportion by rental_unit_value.
   </p>
@@ -170,6 +169,17 @@ Percent Change 2010-2023: 15.15%  <br>
   </p>
      <p class="indent">
        Similarly, the change in Weighted Property Value/Unit/ Census Tract between 2010 and 2023, and the rate of change for the Weighted Property Value/ Census Tract between 2010 and 2023 are graphed using the similar methodology relative to the changes in housing units, vacancies, and missing units. 
+  </p>
+   <p class="center">
+       The weighted property value stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
+NYC Median Property Value 2010: $450950.78 <br>
+NYC Median Property Value 2023: $763,066.57 <br>
+Median Property Value Gain between 2010-2023 $312,115.78 <br>
+Percent Change 2010-2023 69.12% <br>
+  </p>
+  <p class="indent">
+    For the city, the median property value growth of 69.12% outdoes every other metric, and it is not even close. Relative to the 15.15% percent change in missing units, 6.89% growth in housing, and 8.14% relative change in vacancy, the sheer percentage is outside of this world.
+
   </p>
   <figure>
       <iframe src="PropValTimelineChange20102023.html" title= "Figure 10: Timestamped Change in Weighted Property Values/ Census Tract between 2010 and 2023" width="100%" height="600">
@@ -189,17 +199,7 @@ Percent Change 2010-2023: 15.15%  <br>
       <figcaption> Figure 12: Percent Change in Weighted Property Values/ Census Tract between 2010 and 2023
 </figcaption>
     </figure>
-     <p class="center">
-       The weighted property value stats are calculated for the city overall. Below are the results for missing units for the city overall <br>
-NYC Median Property Value 2010: $450950.78 <br>
-NYC Median Property Value 2023: $763,066.57 <br>
-Median Property Value Gain between 2010-2023 $312,115.78 <br>
-Percent Change 2010-2023 69.12% <br>
-  </p>
-  <p class="indent">
-    For the city, the median property value growth of 69.12% outdoes every other metric, and it is not even close. Relative to the 15.15% percent change in missing units, 6.89% growth in housing, and 8.14% relative change in vacancy, the sheer percentage is outside of this world.
-
-  </p>
+    
   <p class="indent">
     Finally, to calculate the correlation between the percentage change  in missing units between 2010 and 2023 (independent variable), and the percentage change in property between 2010 and 2023/ Census Tract (Figures 9,12), a scatterplot was established, with a normalization using the ln (x) or natural log of (x) to straighten out the chart. The chart is below (Figure 13). As you can see, there is no correlation, with the pearson coefficient of 0.017 showing as such. Therefore, there is no logarithmic correlation between the change in vacant homes that are fillable and the change in home prices.
   </p>
