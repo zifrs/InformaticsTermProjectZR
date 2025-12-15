@@ -14,13 +14,21 @@
     margin-bottom: 1em;
   }
     span.italic {
-    display: block;        /* allows centering inside a paragraph */
+    display: block;       
     text-align: center;
     font-style: italic;
   }
     p.center{
       text-align: center;
     }
+    iframe{
+    }
+    figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  text-align: center;    
+}
 </style>
 </head>
 <body>
@@ -61,6 +69,25 @@
    <p class="indent"> 
      Next, the changes in housing units between 2010 and 2023, both in raw values and in percentages, are calculated, NA values were removed, and a static flow map was made to show shifts. Like the timestamped map, a log base-2 scale was used to make a more visually appealing map (Figures 2 and 3). 
    </p>
+  
+    <figure>
+      <iframe src="TimestampedChangeinUnits20102023.html" title=:  "Timestamped Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 1: Timestamped Change in Units/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
+      <figure>
+      <iframe src="ChangeinUnits20102023.html" title=: "Numerical Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 2: Numerical Change in Units/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
+   <figure>
+      <iframe src=ChangeinUnitsPCT20102023.html" title=: "Percent Change in Units/ Census Tract between 2010 and 2023" width="100%" height="600">
+      </iframe>
+      <figcaption> Figure 3: Percent Change in Units/ Census Tract between 2010 and 2023
+</figcaption>
+    </figure>
   <p class="center">
     Subsequently, the number of units in 2010 and 2023, the raw number change in number of units, and the percent change calculated for the city overall (all available tracts). <br>
 Below are the results: <br>
